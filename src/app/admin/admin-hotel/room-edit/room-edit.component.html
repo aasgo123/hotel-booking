@@ -1,0 +1,36 @@
+<form [formGroup]="RoomDetail" (submit)="onSubmit()" autocomplete="off">
+
+
+    <input type="hidden" name="RoomId" formControlName="RoomId">
+  <input type="hidden" name="HotelId" formControlName="HotelId">
+
+
+
+
+    <div class="form-group">
+        <label>Room Type</label>
+        <select name="RoomTypeId" formControlName="RoomTypeId" class="form-control" required>
+        <option [ngValue]=1>Twin</option>
+        <option [ngValue]=2>Single</option>
+        <option [ngValue]=3>King</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+        <label>Remarks</label>
+        <input id="remarks" name="Remarks" formControlName="Remarks" class="form-comtrol" required>
+        <div class="validation-error" *ngIf="RoomDetailControl.Remarks.invalid && RoomDetailControl.Remarks.touched">
+            This Field Is Required
+        </div>
+    </div>
+    <label>Status</label>
+    <input id="status" name="Status" formControlName="Status" class="form-comtrol" required>
+    <div class="validation-error" *ngIf="RoomDetailControl.Status.invalid && RoomDetailControl.Status.touched">
+        This Field Is Required
+    </div>
+    <div class="form-group">
+        <button type="submit" [disabled]="!RoomDetail.valid" class="btn btn-lg btn-block">SUBMIT</button>
+    </div>
+
+
+  </form>

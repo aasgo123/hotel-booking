@@ -1,0 +1,84 @@
+<!--===============================================================================================-->
+
+
+
+<body style="font-family:'Times New Roman'">
+  <div class="wrapper">
+
+
+      <!-- Sidebar  -->
+      <nav id="sidebar">
+          <div class="sidebar-header">
+              <h3 style="color:white">
+                  <a class="fa fa-pen-square">ADMIN</a> &nbsp;
+
+                  <a class="btn btn-info fa fa-hand-pointer-o" (click)="logout()">Logout</a>
+
+              </h3>
+
+
+              <h6></h6>
+          </div>
+
+          <ul class="list-unstyled components">
+
+              <li class="active">
+                  <a routerLink="hotel" routerLinkActive="active" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Hotels</a>
+
+              </li>
+              <li class="active">
+                  <a routerLink="booking" routerLinkActive="active" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Bookings</a>
+
+
+              </li>
+
+          </ul>
+
+
+      </nav>
+
+      <!-- Page Content  -->
+      <div id="content">
+
+
+
+          <div class="page-header" style="height: 250px;">
+              <h1 style="color:whitesmoke; background-color:#7386D5;width:-moz-available; border-width:thick; text-align: center;" class="header"><a class="fa fa-plane">TRIP</a></h1>
+
+
+              <br />
+              <br />
+              <br />
+
+              <section class="container-fluid MainContent">
+
+                  <div class="row">
+
+                      <div class="col-sm-12">
+                          <router-outlet></router-outlet>
+                      </div>
+                  </div>
+              </section>
+
+
+          </div>
+      </div>
+
+
+
+
+      <script src="../../vendor/jquery/jquery-3.2.1.min.js"></script>
+      <!--===============================================================================================-->
+      <script src="../../vendor/animsition/js/animsition.min.js"></script>
+      <!--===============================================================================================-->
+      <script src="../../vendor/bootstrap/js/popper.js"></script>
+      <script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
+      <!--===============================================================================================-->
+      <script src="../../vendor/select2/select2.min.js"></script>
+      <!--===============================================================================================-->
+      <script src="../../vendor/daterangepicker/moment.min.js"></script>
+      <script src="../../vendor/daterangepicker/daterangepicker.js"></script>
+      <!--===============================================================================================-->
+      <script src="../../vendor/countdowntime/countdowntime.js"></script>
+      <!--===============================================================================================-->
+      <script src="../../js/NavBar.js"></script>

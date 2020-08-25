@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+      <div class="col-xl-9 col-lg-9 col-md-9">
+          <div class="hero__caption">
+              <h1>Find your <span>Next tour!</span> </h1>
+              <p>Where would you like to go?</p>
+          </div>
+      </div>
+  </div>
+  <!-- Search Box -->
+  <div class="row">
+      <div class="col-xl-12">
+          <!-- form -->
+          <form [formGroup]="SearchForm" class="search-box" (ngSubmit)="OnSubmit()" #form="ngForm">
+              <div class="input-form mb-30">
+                 <input type="text"  formControlName="Name">
+              </div>
+              <div class="select-form mb-30">
+
+                <select formControlName="List" class="form-control"  >
+<option value="City">City</option>
+<option value="State">State</option>
+
+<option value="Country">Country</option>
+
+
+
+</select>
+
+
+
+
+              </div>
+              <div class="search-form mb-30">
+                  <input type="submit" value="Search" class="btn btn-primary fa fa-magic" />
+              </div>
+          </form>
+      </div>
+
+  </div>
+</div>
+

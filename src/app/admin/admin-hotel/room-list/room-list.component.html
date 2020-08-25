@@ -1,0 +1,29 @@
+<h4>
+    <div class="fa fa-th-list"></div>&nbsp;&nbsp; List of Rooms</h4>
+<div style="font-family:'Century Gothic'">
+    <table class="table table-striped" style="padding-bottom: 0%;">
+        <ng-container *ngFor="let r of room|async">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Room Number</th>
+                    <th>Hotel Name</th>
+                    <th>Room Type</th>
+                    <th>Remarks</th>
+                    <th>Status</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{r.RoomId}}</td>
+                    <td *ngIf="r.RoomTypeId == 1">Twin</td>
+                    <td *ngIf="r.RoomTypeId == 2">Single</td>
+                    <td *ngIf="r.RoomTypeId == 3">King</td>
+                    <td>{{r.Remarks}}</td>
+                    <td>{{r.Status}}</td>
+                    <td><a (click)="viewDetails(r.RoomId)" class="fa fa-info-circle"> Details</a>  | <a (click)="onDelete(r.RoomId)" class="fa fa-trash-alt"> Delete</a></td>
+                </tr>|
+            </tbody>
+        </ng-container>
+    </table>
+</div>

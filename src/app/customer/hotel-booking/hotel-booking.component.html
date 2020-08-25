@@ -1,0 +1,81 @@
+
+
+
+
+<div class="login-page" style=" width: 560px;
+  padding: 8% 0 0;
+  margin-left: 550px;">
+    <div class="form" style="position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 560px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);">
+        <form class="register-form" [formGroup]="BookingForm" (ngSubmit)="onSubmit()"  >
+
+
+            <h4>Booking </h4>
+            <hr />
+<input type="hidden" formControlName="HotelId">
+<input type="hidden" formControlName="UserId">
+            <div class="form-group">
+                <h5>  Booking Date</h5>
+                <div class="col-md-10">
+                   <input type="text" class="form-control" formControlName="BookingDate">
+                   <span class="text-danger"
+                   *ngIf="(BookingFormControls.BookingDate.touched || login )&&BookingFormControls.BookingDate.errors?.required">
+                   required
+               </span>
+                </div>
+            </div>
+
+            <div class="form-group">
+               Arrival date
+                <div class="col-md-10">
+                  <input type="date" class="form-control" formControlName="ArrivalDate" required [min]="today|date">
+                  <span class="text-danger"
+                  *ngIf="(BookingFormControls.ArrivalDate.touched || login )&&BookingFormControls.ArrivalDate.errors?.required">
+                  required
+              </span>
+                </div>
+            </div>
+
+            <div class="form-group">
+              departure date
+               <div class="col-md-10">
+                 <input type="date" class="form-control" formControlName="DepartureDate" required [min]="today|date">
+                 <span class="text-danger"
+                 *ngIf="(BookingFormControls.DepartureDate.touched || login )&&BookingFormControls.DepartureDate.errors?.required">
+                 required
+             </span>
+               </div>
+           </div>
+
+
+
+            <div class="form-group">
+               No Of Guest
+                <div class="col-md-10">
+                  <input type="number" min="0" max="8" formControlName="NoOfGuests"  required>
+                  <span class="text-danger"
+                  *ngIf="(BookingFormControls.NoOfGuests.touched || login )&&BookingFormControls.NoOfGuests.errors?.required">
+                  required
+              </span>
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Confirm Booking" class="btn btn-success" />
+                </div>
+            </div>
+
+
+        </form>
+</div>
+        </div>
+

@@ -1,0 +1,36 @@
+<h4>
+    <div class="fa fa-th-list"></div>&nbsp;&nbsp; List of Hotels</h4>
+
+<div style="font-family:'Century Gothic'">
+    <table class="table table-striped" style="padding-bottom: 0%;">
+        <thead class="thead-dark">
+            <tr>
+                <th>Hotel Name</th>
+                <th>Rating</th>
+                <th>Address</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let hotel of service.list">
+                <td (click)="populateForm(hotel)">{{hotel.HotelName}}</td>
+                <td *ngIf="hotel.HotelTypeId == 1" (click)="populateForm(hotel)">3-Star</td>
+                <td *ngIf="hotel.HotelTypeId == 2" (click)="populateForm(hotel)">4-Star</td>
+                <td *ngIf="hotel.HotelTypeId == 3" (click)="populateForm(hotel)">5-Star</td>
+                <td (click)="populateForm(hotel)">{{hotel.StreetAdd}}, {{hotel.City}}, {{hotel.State}}</td>
+                <td id="noBorder"><a (click)="viewDetails(hotel.HotelId)" class="fa fa-info-circle"> Details</a> | <a (click)="editDetails(hotel.HotelId)" class="fa fa-edit"> Edit</a> | <a (click)="onDelete(hotel.HotelId)" class="fa fa-trash-alt"> Delete</a> | <a (click)="roomDetails(hotel.HotelId)"
+                        class="fa fa-info-circle"> Room Details</a> | <a (click)="addRoom(hotel.HotelId)" class="fa fa-plus-circle"> Add Room</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="row">
+    <div class="col-md-1">
+        <a (click)="add()">
+            <div class="fa fa-plus-circle"> Add</div>
+        </a>
+    </div>
+    <a (click)="goBack()">
+        <div class="fa fa-arrow-circle-left"> Go Back</div>
+    </a>
+</div>

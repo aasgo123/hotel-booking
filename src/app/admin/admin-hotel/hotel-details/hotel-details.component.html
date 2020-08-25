@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="card">
+        <div class="container-fliud">
+            <div class="wrapper row">
+                <div class="preview col-md-6">
+
+                    <div class="preview-pic tab-content">
+                        <div class="tab-pane active" id="pic-1"><img src="{{path}}" /></div>
+
+                    </div>
+
+                </div>
+                <div class="details col-md-6">
+                    <h2>{{hotel.HotelName}}</h2>
+                    <div class="rating">
+                        <ng-container *ngFor="let item of ratingArray();">
+                            <span class="fa fa-star checked"></span>
+                        </ng-container>
+                    </div>
+                    <p>
+                        <h4>Address</h4>
+                        <p>{{hotel.StreetAdd}}, {{hotel.City}}, {{hotel.State}} - {{hotel.Pincode}}</p>
+                        <p>
+                            <h4>Price</h4>
+                            <p>{{hotel.Price}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p>
+        <a (click)="goBack()">
+            <div class="fa fa-arrow-circle-left"> Go Back</div>
+        </a>
+</div>

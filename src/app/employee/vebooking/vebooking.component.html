@@ -1,0 +1,92 @@
+
+  <div class="login-page" style=" width: 1560px;
+  padding: 8% 0 0;
+  margin: auto;">
+        <div class="form" style="position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 1560px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);">
+
+
+
+          <table class="table">
+            <h2> Upcoming Bookings </h2>
+            <tr>
+                <th>
+                    BookingID
+                </th>
+
+                <th>
+                  HotelName
+
+                </th>
+                <th>
+                   HotelCity
+
+                </th>
+                <th>
+                   BookingDate
+                </th>
+                <th>
+                   ArrivalDate
+                </th>
+                <th>
+                    DepartureDate
+                </th>
+                <th>
+                 PaymentStatus
+                </th>
+                <th>
+                   NoOfGuests
+                </th>
+
+
+            </tr>
+
+
+                <tr *ngFor="let book of bookings|async">
+
+                    <td>
+                        {{book.BookingId}}
+                    </td>
+
+                    <td>
+                       {{book.HotelName}}
+                    </td>
+                    <td>
+                       {{book.HotelCity}}
+                    </td>
+                    <td>
+                       {{book.BookingDate}}
+                    </td>
+                    <td>
+                        {{book.ArrivalDate}}
+                    </td>
+                    <td>
+                       {{book.DepartureDate}}
+                    </td>
+
+                    <td>
+                       {{book.NoOfGuests}}
+                    </td>
+
+<td><a class="btn btn-danger fa fa-pen" [routerLink]="['/Employee/guest']"  [queryParams]="{ id: book.BookingId }" >Add Guest</a></td>
+                </tr>
+
+
+
+        </table>
+<hr/>
+
+
+
+
+
+
+
+        </div>
+    </div>

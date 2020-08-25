@@ -1,0 +1,107 @@
+
+<div class="container" style="text-align:center">
+<div class="card" style="width:1060px">
+
+<form [formGroup]="GuestForm" (ngSubmit)="onSubmit()" >
+        <div class="form-horizontal">
+          <h2> Add Guest</h2>
+            <hr />
+<input type ="hidden" formControlName="BookingId">
+            <div class="form-group">
+              First Name
+                <div class="col-md-10">
+                   <input type =text class="form-control" formControlName="GuestFirstName">
+                </div>
+            </div>
+
+            <div class="form-group">
+               LastName
+                <div class="col-md-10">
+                   <input type="text" class="form-control" formControlName="GuestLastName">
+                </div>
+            </div>
+
+            <div class="form-group">
+             ID Proof
+                <div class="col-md-10">
+                   <select formControlName="IdProof" class="form-control">
+<option value="Adhar">Adhar</option>
+<option value="Driving Liecence">Driving liecence</option>
+                   </select>
+                 </div>
+            </div>
+
+            <div class="form-group">
+              Date Of Birth
+                <div class="col-md-10">
+                    <input type="date" formControlName="DOB" >
+                </div>
+            </div>
+
+
+
+
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn btn-default" />
+                </div>
+
+        </div>
+      </div>
+         </form>
+
+
+      </div>
+    </div>
+
+
+    <div class="container" style="text-align:center">
+      <div class="card" style="width:1060px">
+
+
+        <table class="table">
+          <h2> Upcoming Guests </h2>
+          <tr>
+              <th>
+                  BookingID
+              </th>
+
+              <th>
+              First Name
+
+              </th>
+              <th>
+                LastName
+
+              </th>
+              <th>
+                ID proof
+              </th>
+
+
+
+          </tr>
+
+
+              <tr *ngFor="let book of guests|async">
+
+                  <td>
+                      {{book.BookingId}}
+                  </td>
+
+                  <td>
+                     {{book.GuestFirstName}}
+                  </td>
+                  <td>
+                     {{book.GuestLastName}}
+                  </td>
+                  <td>
+                     {{book.IdProof}}
+                  </td>
+              </tr>
+              </table>
+
+            </div>
+          </div>
+

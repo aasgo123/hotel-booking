@@ -1,0 +1,44 @@
+
+<div class="container" style="margin-top:20px; margin-left:60px; width:1000px; text-align:centre;">
+
+  <p class="row" style="float:right">
+      <div class="hero_caption">
+          <h1 style="color:orange; font-size:xx-large">Find your <span>Next tour!</span> </h1>
+  <p style="color:white">Where would you like to go?</p>
+
+
+
+
+
+      <div class="row" *ngFor="let ho of hotels|async" style="display:block">
+
+          <div class="card" style="display:block">
+              <div class="row" style="display:inline">
+                  <ul class="collection with-header">
+                      <li class="collection-header">
+                          <img style="float: left; margin-left:20px;" src="../../../assets/img/elements/a.jpg" class="img-thumbnail"><h2>&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; {{ho.HotelName}}</h2>
+
+
+                          &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+                          <h5>
+                              <a class="fa fa-location-arrow">
+                                 {{ho.City}} &nbsp;
+                                 {{ho.State}} &nbsp;
+                                 {{ho.Pincode}}
+                              </a>
+
+                          </h5>
+                      </li>
+                      <li class="collection-item" style="font-weight: bold;"><h5><a class="fa fa-money">&nbsp; &nbsp; Price: {{ho.Price}}</a>  </h5></li>
+
+                      <li class="collection-item">&nbsp;&nbsp; &nbsp; <a class = "btn btn-Success fa fa-10x fa-pencil" [routerLink]="['/Customer/Book']" [queryParams]="{ id: ho.HotelId }">book</a></li>
+
+                  </ul>
+
+
+                </div>
+          </div>
+      </div>
+
+</div>
+
